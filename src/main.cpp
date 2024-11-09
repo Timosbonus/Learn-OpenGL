@@ -86,6 +86,8 @@ int main() {
     // glBindVertexArray(0);
 
 
+
+
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window)) {
@@ -100,6 +102,9 @@ int main() {
 
         // render the triangle
         ourShader.use();
+        // needs to be called after the use function
+        constexpr float offset = 0.5f;
+        ourShader.setFloat("xOffset", offset);
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
