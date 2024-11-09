@@ -11,7 +11,8 @@ link_directories(${CMAKE_SOURCE_DIR}/lib)
 find_package(OpenGL REQUIRED)
 
 # Add glad as a static library
-add_library(glad STATIC src/glad.c)
+add_library(glad STATIC src/glad.c
+        include/shader.h)
 target_include_directories(glad PUBLIC include)
 
 # Define the executable
