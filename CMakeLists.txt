@@ -23,3 +23,7 @@ target_link_libraries(MyOpenGLProject glad glfw3 OpenGL::GL)
 
 # Set output directory for the executable
 set_target_properties(MyOpenGLProject PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
+# Copy shader files to the build directory
+file(COPY ${CMAKE_SOURCE_DIR}/shaders DESTINATION ${CMAKE_BINARY_DIR})
+
