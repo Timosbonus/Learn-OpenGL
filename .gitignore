@@ -1,32 +1,45 @@
-# Prerequisites
-*.d
+# Standard C++ .gitignore
 
-# Compiled Object files
-*.slo
-*.lo
+# Object files
 *.o
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
+*.lo
 *.la
-*.a
-*.lib
-
-# Executables
+*.al
+*.libs
+*.so
+*.dll
+*.dylib
 *.exe
 *.out
 *.app
+
+# Build directories
+/build/
+/bin/
+/lib/
+/cmake-build-*/
+
+# CMake files
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# IDE specific (Visual Studio, CLion, etc.)
+.vscode/
+.idea/
+*.sln
+*.vcxproj
+*.vcxproj.user
+*.db
+
+# GLAD and GLFW (if downloaded as raw source)
+glad/
+glfw/
+
+# Other temporary files
+*.log
+*.tmp
+*.swp
