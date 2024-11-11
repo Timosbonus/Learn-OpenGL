@@ -45,16 +45,7 @@ int main() {
 
     // build and compile our shader program
     // ------------------------------------
-    Shader ourShader("shaders/3.3.shader.vs", "shaders/3.3.shader.fs");
-
-    std::ifstream shaderFile("shaders/3.3.shader.vs");
-    if (!shaderFile.is_open()) {
-        std::cout << "Failed to load vertex shader file" << std::endl;
-    }
-    shaderFile.close();
-
-
-    // you can name your shader files however you like
+    Shader ourShader("shaders/3.3.shader.vs", "shaders/3.3.shader.fs"); // you can name your shader files however you like
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -86,8 +77,6 @@ int main() {
     // glBindVertexArray(0);
 
 
-
-
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window)) {
@@ -102,9 +91,6 @@ int main() {
 
         // render the triangle
         ourShader.use();
-        // needs to be called after the use function
-        constexpr float offset = 0.5f;
-        ourShader.setFloat("xOffset", offset);
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
